@@ -15,3 +15,20 @@ OPCOES_MENU = (
     "Sugerir uma leitura",
     "Sair",
 )
+
+class Livro:
+    """Representa um livro e as ações que podem ser feitas com ele."""
+   
+    def __init__(self, titulo, autor, ano):
+       
+       self.titulo = titulo.strip()
+       
+       self.autor = autor.strip()
+       
+       self.ano = ano
+       
+       self.disponivel = True
+       
+       self.leitor = ""
+       
+       self.data_emprestimo = ""        
