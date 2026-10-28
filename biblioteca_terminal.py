@@ -31,4 +31,18 @@ class Livro:
        
        self.leitor = ""
        
-       self.data_emprestimo = ""        
+       self.data_emprestimo = ""
+    
+    def emprestar(self, leitor):
+        """Empresta o livro se ele estiver disponível"""        
+       
+        if not self.disponivel:
+            return False
+    
+        self.disponivel = False
+        
+        self.leitor = leitor.strip()
+        
+        self.data_emprestimo = date.today().isoformat()
+        
+        return True
