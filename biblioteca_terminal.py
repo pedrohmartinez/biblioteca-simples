@@ -46,3 +46,17 @@ class Livro:
         self.data_emprestimo = date.today().isoformat()
         
         return True
+    
+    def devolver(self):
+        """Registra a devolução se o livro estiver emprestado"""
+        
+        if self.disponivel:
+            return False
+        
+        self.disponivel = True
+        
+        self.leitor = ""
+        
+        self.data_emprestimo = ""
+        
+        return True
