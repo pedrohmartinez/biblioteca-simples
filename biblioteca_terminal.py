@@ -60,3 +60,14 @@ class Livro:
         self.data_emprestimo = ""
         
         return True
+    
+    def para_dicionário(self):
+        """Transforma o objeto em dicionário para salvá-lo no arquivo."""
+        return{
+            "titulo": self.titulo,
+            "autor": self.autor,
+            "ano": self.ano,
+            "disponivel": self.disponivel,
+            "leitor": self.leitor,
+            "data_emprestimo": self.data_emprestimo,
+        }
