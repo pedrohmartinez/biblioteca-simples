@@ -71,3 +71,19 @@ class Livro:
             "leitor": self.leitor,
             "data_emprestimo": self.data_emprestimo,
         }
+        
+    @classmethod
+    def de_dicionario(cls, dados):
+        """Cria um Livro a partir de um dicionário lido do arquivo."""
+        
+        livro = cls(
+            dados["titulo"],
+            dados["autor"],
+            dados["ano"]
+        )
+        
+        livro.disponivel = dados["disponivel"]
+        livro.leitor = dados["leitor"]
+        livro.data_emprestimo = dados["data_emprestimo"]
+        
+        return livro
