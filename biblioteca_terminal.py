@@ -87,3 +87,10 @@ class Livro:
         livro.data_emprestimo = dados["data_emprestimo"]
         
         return livro
+    
+class Biblioteca:
+    """Guarda uma lista de livros e oferece operações sobre ela"""
+    def __init__(self):
+        
+        self.livros = []
+        
