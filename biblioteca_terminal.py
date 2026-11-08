@@ -90,7 +90,28 @@ class Livro:
     
 class Biblioteca:
     """Guarda uma lista de livros e oferece operações sobre ela"""
+    
     def __init__(self):
         
         self.livros = []
         
+    def adicionar(self, livro):
+        
+        self.livros.append(livro)
+        
+    def buscar(self, texto):
+        """Busca por título ou autor, sem diferenciar maiúsculas de minúsculas"""
+        texto = texto.strip().lower()
+        
+        encontrados = []
+        
+        for livro in self.livros:
+            
+            titulo_correspondente = texto in livro.titulo.lower()
+            
+            autor_correspondente = texto in livro.autor.lower()
+            
+            if  titulo_correspondente or autor_correspondente:
+                encontrados.append(livro)
+        
+        return encontrados
